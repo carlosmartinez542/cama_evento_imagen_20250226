@@ -13,7 +13,7 @@ var originalX;
 var originalY;
 
 window.onload = function(){
-    document.onmousedown = starDrag;
+    document.onmousedown = startDrag;
     document.onmouseup = stopDrag;
 }
 
@@ -25,7 +25,7 @@ function sensorClick(){
 
 function createPopUp(parent){
     let p = document.getElementById("popup");
-
+   
     if(p){
         p.parentNode.removeChild(p);
     }
@@ -40,7 +40,7 @@ function createPopUp(parent){
     text.textContent = parent.id;
     popup.appendChild(text);
 
-    var map = document.getElementByClasseName("map")[0];
+    var map = document.getElementByClassName("map")[0];
     map.appendChild(popup);
 }
 
@@ -59,7 +59,7 @@ function baseOnLoad(){
         sensor.classList.add("sensor");
         sensor.classList.add("dragme");
         sensor.style.left = `${math.floor(math.random() = 900)}px`;
-        sensor.style.top = `${math.floor(math.random() = 900)}px`;
+        sensor.style.top = `${math.floor(math.random() = 500)}px`;
         sensor.onclick = sensorClick;
 
         let parent = document.getElementsByClassName("map")[0];
